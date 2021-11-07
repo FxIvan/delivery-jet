@@ -1,0 +1,20 @@
+.navGeneral{
+    width: 100%;
+    margin-top: 0.8rem;
+}
+
+ul li a, li{
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Dongle', sans-serif;
+    font-size: 4vh;
+    color: black;
+}
+
+.dropdownMenuSecond{
+    display: none;
+}
+
+.btndropDownSecond:hover .dropdownMenuSecond{
+    display: contents;
+}

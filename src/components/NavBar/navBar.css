@@ -1,0 +1,8 @@
+.menuGeneral{
+    display: flex;
+}
+
+li{
+    list-style: none;
+    text-decoration: none;
+}
