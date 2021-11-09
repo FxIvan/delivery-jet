@@ -1,5 +1,7 @@
 import React from 'react'
 import './menus.css'
+import {CartWidget} from '../cartWidget/CartWidget'
+
 
 export const Menu = () =>{
     return(
@@ -16,6 +18,7 @@ export const Menu = () =>{
                         </ul>
                 </li>
                 <li><a href="./ingresar">INGRESAR</a></li>
+                <li> <CartWidget props="5"/> </li>
                 </ul>
             </nav>
     )
