@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <NavBar/>
-      <ItemListContainer title="PACK DIAMANTE" titleDescription="10 Envios" description="10 envios dentro de zona sur, norte y CABA" price="1.500$"/>
+      <ItemListContainer/>
     </div>
   );
 }
