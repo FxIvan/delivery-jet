@@ -1,19 +1,11 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './style.css'
 import moneda from './img/moneda.jpg'
+import {ItemCount} from '../ItemCount/ItemCount'
 
 
 export const ItemListContainer = () =>{
-
     
-    const [clicks, setClicks] = useState(1)
-
-    const sumarClick = () =>{
-        setClicks(clicks + 1)
-        console.log(clicks)
-    }
-    
-
     return(
     <div className="targetCarrito text-center">
         <div className="">
@@ -48,10 +40,12 @@ export const ItemListContainer = () =>{
             <h2>3.000$</h2>
         </div>
 
-        <div className="row d-flex justify-content-evenly">
+        
+        <ItemCount stock="5"/>
+        {/*<div className="row d-flex justify-content-evenly">
             <button className="col-2" onClick={sumarClick} type="button">+Agregar</button>
             <button className='col-2'>Comprar</button>
-        </div>
+        </div>*/}
         </div>
     )
 }
