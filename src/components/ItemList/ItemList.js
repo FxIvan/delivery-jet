@@ -12,7 +12,7 @@ export const ItemList = () =>{
                     resolve(
                         stock.map((stocks)=>{
                             return(
-                            <div className="targetCarrito text-center col-md-4">
+                            <div className="targetCarrito text-center col-md-4" key={stocks.id}>
                             <div className="">
                                 <div>
                                 <h2>{stocks.title}</h2>
@@ -51,12 +51,17 @@ export const ItemList = () =>{
                             )
                         }
                     )
+
                     )})
             }
 
             datosProductos()
             .then((resp)=>{
                 setState(resp)
+            })
+            .catch((err)=>{
+                setState(err)
+                console.log("Hubo un error en la Carga")
             })
         },3000)
     }, [])
