@@ -25,11 +25,13 @@ export const ItemCount = ({stock}) =>{
 
 
     return(
-        <div className="row d-flex justify-content-evenly">
-            <h2>{clicks}</h2>
-            <button className="col-2" onClick={sumarClick} type="button">+Agregar</button>
-            <button className="col-2" onClick={restarClick} type="button">-Quitar</button>
-            <button className='col-2'>Comprar</button>
+        <div>
+            <div className="row d-flex justify-content-evenly">
+                <h2>{clicks}</h2>
+                <button className="col-2" onClick={sumarClick} type="button">+</button>
+                <button className="col-2" onClick={restarClick} type="button">-</button>
+            </div>
+                <button className='col-2'>Comprar</button>
         </div>
     )
 }

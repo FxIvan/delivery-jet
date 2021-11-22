@@ -1,6 +1,5 @@
 import React from 'react'
 import carrito from './img/carrito.png'
-import { ItemCount } from '../ItemCount/ItemCount'
 
 
 export const CartWidget = ({props}) =>{
