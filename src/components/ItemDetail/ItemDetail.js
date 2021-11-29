@@ -1,9 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import { ItemCount } from "../ItemCount/ItemCount";
 
 //id,title,envios,peso,duracion,Price,pictureURL
-export const ItemDetail = ({ id,title,envios,peso,duracion,Price,pictureURL,category }) => {
+export const ItemDetail = ({ id,title,envios,peso,duracion,Price,pictureURL,category,stock }) => {
+  
+  const [clicks,setClicks] = useState(1)
+
+  //Carrito
+  const [agregar,setAgregado] = useState(false)
+
+  const handleAgregar = () =>{
+    console.log('Item Agregado',{
+      id,// es igual a id : id
+      title, //es igual a title:title --> propiedad:valor
+      envios,
+      peso,
+      duracion,
+      Price,
+      pictureURL,
+      clicks //este es la cantidad que queremos osea es como el stock que quiere el usuario      
+    })
+    setAgregado(true)
+  }
 
   return (
     <div key={id}>
@@ -35,7 +54,7 @@ export const ItemDetail = ({ id,title,envios,peso,duracion,Price,pictureURL,cate
                 <div className="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
                   <h3>Zonas</h3>
                   <span>
-                    Sur <br /> Norte <br /> Caba{" "}
+                    Sur <br /> Norte <br /> Caba
                   </span>
                 </div>
               </div>
@@ -45,8 +64,9 @@ export const ItemDetail = ({ id,title,envios,peso,duracion,Price,pictureURL,cate
               <h3>Precio:</h3>
               <h2>{Price}$</h2>
             </div>
-
-            <ItemCount stock="5" />
+            {!agregar ?  <ItemCount stock={stock} clicks={clicks} setClicks={setClicks} onAdd={handleAgregar} />
+                          : <Link to='/carrito'>Terminar mi compra</Link>
+          }
           </div>
       
     </div>

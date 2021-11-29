@@ -1,8 +1,29 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import { ItemCount } from "../ItemCount/ItemCount";
 
 export const Item = ({ stocks }) => {
+
+  const [clicks,setClicks] = useState(1)
+
+  //Carrito
+  const [agregar,setAgregado] = useState(false)
+
+  const handleAgregar = () =>{
+    console.log('Item Agregado',{
+      id:stocks.id,// es igual a id : id
+      title:stocks.title, //es igual a title:title --> propiedad:valor
+      envios:stocks.envios,
+      peso:stocks.peso,
+      duracion:stocks.duracion,
+      Price:stocks.Price,
+      pictureURL:stocks.pictureURL,
+      clicks //este es la cantidad que queremos osea es como el stock que quiere el usuario      
+    })
+    setAgregado(true) //para que aparezca el boton Terminar Compra cuando apretemos Agregar
+  }
+
+
   return (
     <div>
       {
@@ -43,7 +64,9 @@ export const Item = ({ stocks }) => {
               <h2>{stocks.Price}$</h2>
             </div>
 
-            <ItemCount stock="5" />
+            {!agregar ?  <ItemCount stock={stocks.stock} clicks={clicks} setClicks={setClicks} onAdd={handleAgregar} />
+                          : <Link to='/carrito'>Terminar mi compra</Link>
+          }
           </div>
         
       }

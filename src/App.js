@@ -17,11 +17,11 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <NavBar />
-        <Routes>
+        <NavBar />                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+        <Routes>                                            
           <Route path="/" element={<ItemListContainer />} />
           <Route path="/category/:catId" element={<ItemListContainer/>} />
-          <Route path="/item/:id" element={<ItemDetailContainer/>} />
+          <Route path="/item/:id" element={<ItemDetailContainer/>} />                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 
           <Route path="/packs" element={<Packs/>}/>
           <Route path="/hacer-envio" element={<HacerEnvio/>}/>

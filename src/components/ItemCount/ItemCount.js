@@ -1,26 +1,19 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 
-export const ItemCount = ({stock}) =>{
-
-    const [clicks,setClicks] = useState(1)
-
-    let restarClick =()=>{
-        if(clicks > 1){
-        setClicks(clicks - 1)
-        console.log(clicks)
-        }else{
-            alert("No se puede quitar mas producto")
-        }
+export const ItemCount = ({stock,clicks,setClicks,onAdd}) =>{
+    const restarClick = () =>{
+        clicks > 0 && setClicks(clicks - 1)
     }
 
-    let sumarClick=()=>{  
-        if(stock>clicks){
-            setClicks(clicks + 1)
-        }else{
-            alert("No hay mas stock")
-        }
+    const sumarClick = () =>{
+        stock > clicks && setClicks(clicks + 1)
     }
+
+    const handleCompra = () =>{
+
+    }
+
 
 
 
@@ -31,7 +24,8 @@ export const ItemCount = ({stock}) =>{
                 <button className="col-2" onClick={sumarClick} type="button">+</button>
                 <button className="col-2" onClick={restarClick} type="button">-</button>
             </div>
-                <button className='col-2'>Comprar</button>
+                <button className='col-2' onClick={onAdd}>Agregar</button>
+                <button className='col-2' onSubmit={handleCompra}>Comprar</button>
         </div>
     )
 }

@@ -8,7 +8,8 @@ export const stock = [{
     duracion:1,
     Price:3000,
     pictureURL:moneda,
-    category:"oro"
+    category:"oro",
+    stock:5
 },
 {
     id:101,
@@ -18,7 +19,8 @@ export const stock = [{
     duracion:1,
     Price:2000,
     pictureURL:moneda,
-    category:"plata"
+    category:"plata",
+    stock:3
 },
 {
     id:102,
@@ -28,5 +30,6 @@ export const stock = [{
     duracion:1,
     Price:1000,
     pictureURL:moneda,
-    category:"bronce"
+    category:"bronce",
+    stock:4
 }]
