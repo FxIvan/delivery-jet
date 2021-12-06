@@ -1,5 +1,6 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../CartContext/CartContext";
 import { ItemCount } from "../ItemCount/ItemCount";
 
 //id,title,envios,peso,duracion,Price,pictureURL
@@ -7,21 +8,19 @@ export const ItemDetail = ({ id,title,envios,peso,duracion,Price,pictureURL,cate
   
   const [clicks,setClicks] = useState(1)
 
+  const {agregarAlCarrito, isInCart} = useContext(CartContext)
+
   //Carrito
-  const [agregar,setAgregado] = useState(false)
 
   const handleAgregar = () =>{
-    console.log('Item Agregado',{
-      id,// es igual a id : id
-      title, //es igual a title:title --> propiedad:valor
-      envios,
-      peso,
-      duracion,
-      Price,
-      pictureURL,
-      clicks //este es la cantidad que queremos osea es como el stock que quiere el usuario      
-    })
-    setAgregado(true)
+      if(clicks>0){
+        agregarAlCarrito({
+          id,
+          title,
+          Price,
+          clicks
+        })
+      }
   }
 
   return (
@@ -64,7 +63,7 @@ export const ItemDetail = ({ id,title,envios,peso,duracion,Price,pictureURL,cate
               <h3>Precio:</h3>
               <h2>{Price}$</h2>
             </div>
-            {!agregar ?  <ItemCount stock={stock} clicks={clicks} setClicks={setClicks} onAdd={handleAgregar} />
+            {!isInCart(id) ?  <ItemCount stock={stock} clicks={clicks} setClicks={setClicks} onAdd={handleAgregar} />
                           : <Link to='/carrito'>Terminar mi compra</Link>
           }
           </div>
