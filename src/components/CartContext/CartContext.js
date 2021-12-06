@@ -8,7 +8,6 @@ export const CartProvider = ({children}) =>{
     
   const [carrito,setCarrito] = useState([])
 
-  console.log(carrito)
 
   const agregarAlCarrito=(item)=>{
     setCarrito([...carrito,item]) //agrega lo que agrego anteriormente mas que lo agrega actualmente
@@ -23,7 +22,12 @@ export const CartProvider = ({children}) =>{
   }
 
   const totalCompra = () =>{
-      return carrito.reduce((acc,val)=> acc + val.price * val.clicks,0)
+      return carrito.reduce((acc,val)=>{
+
+        return(
+        acc + val.Price * val.clicks
+        )
+      },0)
   }
 
   const isInCart = (id) =>{
@@ -34,6 +38,7 @@ export const CartProvider = ({children}) =>{
     return carrito.reduce((acc,val)=> acc + val.clicks,0)
   }
 
+  console.log(children)
     return(
         <CartContext.Provider value={{
             carrito,

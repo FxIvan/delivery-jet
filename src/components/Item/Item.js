@@ -1,15 +1,33 @@
-import React,{useState} from "react";
+import React,{useContext, useState} from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../CartContext/CartContext";
 import { ItemCount } from "../ItemCount/ItemCount";
 
 export const Item = ({ stocks }) => {
 
+  const {agregarAlCarrito} = useContext(CartContext)
   const [clicks,setClicks] = useState(1)
 
   //Carrito
   const [agregar,setAgregado] = useState(false)
 
+  
   const handleAgregar = () =>{
+    if(clicks > 0){
+      agregarAlCarrito({
+        id:stocks.id,// es igual a id : id
+        title:stocks.title, //es igual a title:title --> propiedad:valor
+        envios:stocks.envios,
+        peso:stocks.peso,
+        duracion:stocks.duracion,
+        Price:stocks.Price,
+        pictureURL:stocks.pictureURL,
+        clicks //este es la cantidad que queremos osea es como el stock que quiere el usuario  
+      })
+      setAgregado(true)
+    }
+
+    /*
     console.log('Item Agregado',{
       id:stocks.id,// es igual a id : id
       title:stocks.title, //es igual a title:title --> propiedad:valor
@@ -21,7 +39,9 @@ export const Item = ({ stocks }) => {
       clicks //este es la cantidad que queremos osea es como el stock que quiere el usuario      
     })
     setAgregado(true) //para que aparezca el boton Terminar Compra cuando apretemos Agregar
+    */
   }
+
 
 
   return (
@@ -31,7 +51,7 @@ export const Item = ({ stocks }) => {
           <div className="targetCarrito text-center col-md-4" key={stocks.id}>
             <div className="">
               <div>
-              <Link to={`/item/${stocks.id}`}>
+              <Link to={`/item/${stocks.id}`} style={{ textDecoration: 'none' }}>
                 <h2>{stocks.title}</h2>
               </Link>  
                 <img src={stocks.pictureURL} alt="moneda" />
@@ -65,7 +85,7 @@ export const Item = ({ stocks }) => {
             </div>
 
             {!agregar ?  <ItemCount stock={stocks.stock} clicks={clicks} setClicks={setClicks} onAdd={handleAgregar} />
-                          : <Link to='/carrito'>Terminar mi compra</Link>
+                          : <Link to='/carrito' style={{ textDecoration: 'none' }}>Terminar mi compra</Link>
           }
           </div>
         
