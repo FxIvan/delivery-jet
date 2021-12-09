@@ -3,6 +3,9 @@ import './style.css'
 import {stock} from './data/stock'
 import {ItemList} from '../ItemList/ItemList'
 import { useParams } from 'react-router'
+//Firebase
+import { collection,getDocs, query, where} from 'firebase/firestore/lite'
+import { db } from '../firebase/config'
 
 
 export const ItemListContainer = () =>{
@@ -14,34 +17,19 @@ export const ItemListContainer = () =>{
     console.log(catId)
     useEffect(() => {
 
-        /* esto podemos utilizar como componente */
-        const pedirDatos = () =>{
-            return new Promise((resolve,reject)=>{
-                setTimeout(()=>{
-                    resolve(stock)
-                },3000)
-            })
-        }
-        /* esto podemos utilizar como componente */
-
-
-        /* RESPUESTA */
-        pedirDatos()
-        .then((resp)=>{
-            if(!catId){
-            setProductos(resp)
-            }else{
-                setProductos(
-                    resp.filter(prod=>{
-                    return(
-                    prod.category === catId
-                    )
-                }))
-            }
+        //1. Armo la referencia
+        const productoRef = collection(db,'productos')
+        //const q = query(productoRef, where('category','==',catId))
+        // 2 . Metodo GET a esa referencia
+        getDocs(productoRef)
+        .then(resp=>{
+            const items = resp.docs.map(item =>({
+                id:item.id,
+                ...item.data()
+            })) //accedemos al dato de los documentos
+            setProductos(items)
         })
-        .catch((err)=>{
-            setProductos(err)
-        })
+            
 
     }, [catId])
     return(
