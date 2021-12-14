@@ -30,7 +30,7 @@ export const CartProvider = ({children}) =>{
       },0)
   }
 
-  const isInCart = (id) =>{
+  const isInCart = (id) =>{ //sirve para que el producto no se vuelva a repetir pero yo no quiero eso asi que no lo uso
     return carrito.some((prod) => prod.id === id) //recorre el array solo devuelve true o false
   }
 

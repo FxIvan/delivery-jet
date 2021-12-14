@@ -10,6 +10,8 @@ export const ItemDetail = ({ id,title,envios,peso,duracion,Price,pictureURL,cate
 
   const {agregarAlCarrito, isInCart} = useContext(CartContext)
 
+  const [agregar,setAgregado] = useState(false)
+
   //Carrito
 
   const handleAgregar = () =>{
@@ -21,6 +23,7 @@ export const ItemDetail = ({ id,title,envios,peso,duracion,Price,pictureURL,cate
           clicks
         })
       }
+      setAgregado(true)
   }
 
   return (
@@ -63,7 +66,7 @@ export const ItemDetail = ({ id,title,envios,peso,duracion,Price,pictureURL,cate
               <h3>Precio:</h3>
               <h2>{Price}$</h2>
             </div>
-            {!isInCart(id) ?  <ItemCount stock={stock} clicks={clicks} setClicks={setClicks} onAdd={handleAgregar} />
+            {!agregar ?  <ItemCount stock={stock} clicks={clicks} setClicks={setClicks} onAdd={handleAgregar} />
                           : <Link to='/carrito' style={{ textDecoration: 'none' }}>Terminar mi compra</Link>
           }
           </div>

@@ -14,6 +14,8 @@ import { PageNotFound } from "./components/pages/pageNotFound/pageNotFound";
 import { CartWidget } from "./components/cartWidget/CartWidget";
 import { CartProvider, CartContext } from "./components/CartContext/CartContext";
 import { CartView } from "./components/CartView/CartView";
+import {Checkout} from './components/Checkout/Checkout'
+
 function App() {
 
   return (
@@ -33,6 +35,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<PageNotFound />} />
             <Route path="carrito" element={<CartView />} />
+            <Route path="/checkout" element={<Checkout/>}/>
           </Routes>
           <Footer />
         </BrowserRouter>

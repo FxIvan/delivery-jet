@@ -27,7 +27,7 @@ export const CartView = () => {
         <div className="container">
           {carrito.map((prod) => {
             return (
-              <div className="d-flex">
+              <div className="d-flex" key={prod.id}>
                 <div className="mx-4">
                 <h2>{prod.title}</h2>
                 <img width="20" src={prod.pictureURL}/>
@@ -38,7 +38,7 @@ export const CartView = () => {
                   <button
                     type="button"
                     className="btn btn-danger"
-                    onClick={() => removerCarrito(prod.id)}
+                    onSubmit={()=>removerCarrito(prod.id)}
                   >
                     <BsFillTrashFill />
                   </button>
@@ -47,6 +47,7 @@ export const CartView = () => {
             );
           })}
           <button onClick={() => vaciarCarrito()} className="btn btn-danger ms-4 mt-4">Vaciar Carrito</button>
+          <Link to='/checkout' className="btn btn-success mx-2 mt-4">Terminar Mi Compra</Link>
           <h3 className="mt-4">Total:{totalCompra()}</h3>
         </div>
       )}
