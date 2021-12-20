@@ -26,6 +26,7 @@ export const CartView = () => {
       ) : (
         <div className="container">
           {carrito.map((prod) => {
+            console.log("CartView:",prod.id)
             return (
               <div className="d-flex" key={prod.id}>
                 <div className="mx-4">
@@ -36,9 +37,9 @@ export const CartView = () => {
                 </div>
                 <div className="mt-2">
                   <button
-                    type="button"
+                    type="submit"
                     className="btn btn-danger"
-                    onSubmit={()=>removerCarrito(prod.id)}
+                    onClick={()=> removerCarrito(prod.id)}
                   >
                     <BsFillTrashFill />
                   </button>

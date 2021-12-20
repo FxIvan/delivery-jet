@@ -8,14 +8,14 @@ import { validarDatos } from "../firebase/validarDatos";
 export const Checkout = () => {
   const { carrito, totalCompra } = useContext(CartContext);
 
-  const [compraDato, setCompraDato] = useState([
+  const [compraDato, setCompraDato] = useState(
     {
       nombre: "",
       direccion: "",
       numero: "",
       telefono: "",
-    },
-  ]);
+    }
+  );
 
   const handleChange = (e) => {
     setCompraDato({
@@ -24,29 +24,31 @@ export const Checkout = () => {
     });
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
+    const infoRef = collection(db,'informacion')
     if (!validarDatos(compraDato)) {
       return;
     }
 
-    const orden = {
+    const orden ={
       itemBuy: {
-        ...compraDato,
+        ...compraDato
       },
       items: carrito,
       total: totalCompra(),
       data:Timestamp.fromDate(new Date())
-    };
+    }
 
-    const orderRef = collection(db,'order') 
-    addDoc(orderRef,orden) //hacemos push para meterlo en la base de datos, primer parametro es la referencia y el segundo que dato le queremos mater a esa referencia
-        .then(resp=>{
-            console.log(resp.id)
-        })
+      addDoc(infoRef,orden)
+      .then(resp=>{
+        console.log(resp.id)
+      })
 
-  };
+    
+  }
 
   return (
     <div>
@@ -96,5 +98,17 @@ export const Checkout = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+      
+}
+
+/*
+    const orden ={
+      itemBuy: {
+        ...compraDato
+      },
+      items: carrito,
+      total: totalCompra(),
+      data:Timestamp.fromDate(new Date())
+    };
+*/

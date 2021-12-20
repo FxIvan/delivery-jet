@@ -4,7 +4,7 @@ import {stock} from './data/stock'
 import {ItemList} from '../ItemList/ItemList'
 import { useParams } from 'react-router'
 //Firebase
-import { collection,getDocs, query, where} from 'firebase/firestore/lite'
+import { collection,getDocs, query, where} from 'firebase/firestore'
 import { db } from '../firebase/config'
 
 
@@ -13,8 +13,6 @@ export const ItemListContainer = () =>{
     const [productos,setProductos] = useState ([])
 
     let { catId }= useParams()  
-
-    console.log(catId)
     useEffect(() => {
 
         //1. Armo la referencia
@@ -29,7 +27,8 @@ export const ItemListContainer = () =>{
             })) //accedemos al dato de los documentos
             setProductos(items)
         })
-            
+        
+        console.log("ItemListCotainer:", productos)
 
     }, [catId])
     return(

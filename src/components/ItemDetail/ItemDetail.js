@@ -24,6 +24,8 @@ export const ItemDetail = ({ id,title,envios,peso,duracion,Price,pictureURL,cate
         })
       }
       setAgregado(true)
+
+      console.log(id)
   }
 
   return (
