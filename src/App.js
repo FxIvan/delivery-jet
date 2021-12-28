@@ -15,6 +15,7 @@ import { CartWidget } from "./components/cartWidget/CartWidget";
 import { CartProvider, CartContext } from "./components/CartContext/CartContext";
 import { CartView } from "./components/CartView/CartView";
 import {Checkout} from './components/Checkout/Checkout'
+import { Usuario } from "./components/pages/login/usuario";
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
             <Route path="/faq" element={<Faq />} />
             <Route path="/zonas/:zonId" element={<Zonas />} />
             <Route path="/login" element={<Login />} />
+            <Route path='/usuario' element={<Usuario/>}/>
             <Route path="*" element={<PageNotFound />} />
             <Route path="carrito" element={<CartView />} />
             <Route path="/checkout" element={<Checkout/>}/>

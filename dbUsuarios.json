@@ -1,0 +1,18 @@
+{
+    "usuarios":[
+        {
+            "usuario":"ivan",
+            "apellido":"almendra",
+            "clave":"e92d74ccacdc984afa0c517ad0d557a6",
+            "rol":"alumno",
+            "pais":"Argentina"
+        },
+        {
+            "usuario":"conrado",
+            "apellido":"lanusse",
+            "clave":"c3a690be93aa602ee2dc0ccab5b7b67e",
+            "rol":"profesor",
+            "pais":"Argentina"
+        }
+    ]
+}
