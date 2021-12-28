@@ -14,9 +14,9 @@ export const CartView = () => {
   } = useContext(CartContext);
 
   return (
-    <div>
+    <div className="">
       {totalCantidad() === 0 ? (
-        <div className=" container cartview-container">
+        <div className=" container cartview-container mt-5">
           <Link to="/" style={{ textDecoration: 'none' }}>
             
             <h2 className="">No hay Item</h2>
@@ -24,7 +24,7 @@ export const CartView = () => {
           </Link>
         </div>
       ) : (
-        <div className="container">
+        <div className="container all-container-cartview">
           {carrito.map((prod) => {
             console.log("CartView:",prod.id)
             return (

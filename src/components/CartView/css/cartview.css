@@ -2,6 +2,10 @@ Link{
     text-decoration: none;
 }
 
+.all-container-cartview{
+    height: 100vh;
+}
+
 .cartview-container img{
     width: 10%;
 }
@@ -17,6 +21,10 @@ Link{
 .cartview-container span{
     font-family: 'Exo 2', sans-serif;
     font-size: 4vh;
+}
+
+.cartview-container{
+    height: 100vh;
 }
 
 .cartview-container button{

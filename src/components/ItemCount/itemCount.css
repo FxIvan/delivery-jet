@@ -1,0 +1,12 @@
+.button-count{
+    display: contents;
+}
+
+.button-count button{
+    background-color: khaki;
+    width: 70%;
+}
+
+.button-agregar button{
+    width: 50%;
+}

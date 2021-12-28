@@ -31,13 +31,13 @@ function App() {
             <Route path="/packs" element={<Packs />} />
             <Route path="/hacer-envio" element={<HacerEnvio />} />
             <Route path="/faq" element={<Faq />} />
-            <Route path="/Zonas/:zonId" element={<Zonas />} />
+            <Route path="/zonas/:zonId" element={<Zonas />} />
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<PageNotFound />} />
             <Route path="carrito" element={<CartView />} />
             <Route path="/checkout" element={<Checkout/>}/>
           </Routes>
-          <Footer />
+            <Footer />
         </BrowserRouter>
       </CartProvider>
     </div>

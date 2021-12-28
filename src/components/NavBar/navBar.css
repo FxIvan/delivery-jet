@@ -2,7 +2,7 @@
     display: flex;
 }
 
-li{
+li,a{
     list-style: none;
     text-decoration: none;
 }

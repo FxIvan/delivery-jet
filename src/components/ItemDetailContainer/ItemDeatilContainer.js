@@ -33,16 +33,3 @@ export const ItemDetailContainer = () => {
     </div>
   );
 };
-
-
-/*
-    getDocs(docRef)
-     .then(resp=>{
-      console.log(resp)
-       setItemId({
-        id:doc.id,
-        ...resp.data()
-       })
-     })
-
-*/

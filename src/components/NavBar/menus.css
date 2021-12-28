@@ -3,7 +3,7 @@
     margin-top: 0.8rem;
 }
 
-ul li a, li{
+ul li a, li {
     text-decoration: none;
     list-style: none;
     font-family: 'Dongle', sans-serif;
@@ -17,4 +17,5 @@ ul li a, li{
 
 .btndropDownSecond:hover .dropdownMenuSecond{
     display: contents;
+    z-index: 1;
 }
