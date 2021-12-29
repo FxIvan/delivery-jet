@@ -1,3 +1,5 @@
+### Todo el funcionamiento se encuentra dentro de la rama ***firebase*** ###
+
 ### Pagina
 > Es una pagina de delivery que cuenta con tres unicos paquetes, por cada paquete se diferencia por el peso, zona de envio y cantidad de envios, cuenta con un Login y un carrito de compra, la unica seccion que no funciona por el momento es el link de hacer un envio.
 
@@ -19,3 +21,4 @@
 ### Libreria para Instalar para el login  ###
 ***npm install -g json-server***
 ***npm install axios md5 universal-cookie***
+
