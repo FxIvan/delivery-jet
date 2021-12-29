@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+### Todo el funcionamiento se encuentra dentro de la rama ***firebase*** ###
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Pagina
+> Es una pagina de delivery que cuenta con tres unicos paquetes, por cada paquete se diferencia por el peso, zona de envio y cantidad de envios, cuenta con un Login y un carrito de compra, la unica seccion que no funciona por el momento es el link de hacer un envio.
 
-## Available Scripts
+### Funcionamiento de Carrito de Compra
+> Cuando finalizamos la compra esta nos pide datos de la persona que adquiera el servicio, y nosotros como administrador lo vamos a poder
+> ver en nuestra base de datos de Firebase como se muestra en el video
+![ALT](https://github.com/FxIvan/delivery-jet/blob/firebase/src/GIF/carritodecompra.gif.gif?raw=true)
 
-In the project directory, you can run:
+### Funcionamiento del Login
+> Esto lo aprendi fuera del curso, use axio para verificar que el usuario y clave coincidan, use md5 para desencriptar la clave, cookie para almacenar y recuperar
+> informacion y por ultimo levante un servidor con json-server
+> 
+#### json-server --watch dbUsuarios.json --port 3001 ####
+> en caso de que queramos proobar instalamos las las librerias de axios, md5, cookie-universal y json-server
+> si vamos a levantar el servidor debe ser por una consola exterior y no el de visual studio code
 
-### `npm start`
+![ALT](https://github.com/FxIvan/delivery-jet/blob/firebase/src/GIF/ezgif.com-gif-maker.gif?raw=true)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Libreria para Instalar para el login  ###
+***npm install -g json-server***
+***npm install axios md5 universal-cookie***
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
